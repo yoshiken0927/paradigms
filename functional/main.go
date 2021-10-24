@@ -15,6 +15,6 @@ var (
 func main() {
 	flag.Parse()
 	fmt.Println(
-		service.GetEmployee(*name)(*age).Age,
+		service.UpdateEmployee(*name)(*age).Age,
 	)
 }
