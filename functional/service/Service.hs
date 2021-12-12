@@ -10,5 +10,8 @@ putEmployee :: String -> Int -> Employee
 infixl 1 |>
 (|>) x f = f x
 
--- putEmployee name age = updateEmployee(setAge (findEmployee name) age)
-putEmployee name age = (findEmployee name |> setAge $ age) |> updateEmployee
+-- putEmployee name age = do
+--   updateEmployee(setAge (findEmployee name) age)
+
+putEmployee name age = do
+  (findEmployee name |> setAge $ age) |> updateEmployee

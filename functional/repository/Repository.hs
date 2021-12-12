@@ -6,7 +6,15 @@ module Repository
 import Model
 
 findEmployee :: String -> Employee
-updateEmployee :: Employee -> Employee
+findEmployee name = Employee {
+  name = name,
+  age = 30,
+  version = 0
+}
 
-findEmployee name = Employee { name = name, age = 30, version = 0 }
-updateEmployee e = Employee { name = name(e), age = age(e), version = version(e) + 1 }
+updateEmployee :: Employee -> Employee
+updateEmployee e = Employee {
+  name = name(e),
+  age = age(e),
+  version = version(e) + 1
+}
