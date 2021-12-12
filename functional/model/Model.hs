@@ -5,6 +5,6 @@ module Model
 
 data Employee = Employee { name::String, age::Int }
 
-setAge :: Employee -> Int -> Employee
+setAge :: Int -> Employee -> Employee
 
-setAge employee age = employee { age = age }
+setAge age employee = employee { age = age }
