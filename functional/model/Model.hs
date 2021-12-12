@@ -3,8 +3,8 @@ module Model
       setAge,
     ) where
 
-data Employee = Employee { name::String, age::Int }
+data Employee = Employee { name::String, age::Int, version::Int }
 
 setAge :: Employee -> Int -> Employee
 
-setAge employee age = employee { age = age }
+setAge e age = e { age = age }
