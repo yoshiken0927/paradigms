@@ -18,5 +18,4 @@ func UpdateEmployee(e model.Employee) model.Employee {
 		Age:     e.Age,
 		Version: e.Version + 1,
 	}
-
 }

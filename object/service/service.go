@@ -7,7 +7,7 @@ import (
 	"github.com/yoshiken0927/paradigms/object/repository"
 )
 
-func GetOlder(name string, age int) (model.Employee, error) {
+func PutEmployee(name string, age int) (model.Employee, error) {
 	e := repository.FindEmployee(name)
 	if e == nil {
 		return nil, errors.New("employee is not found")
@@ -18,6 +18,6 @@ func GetOlder(name string, age int) (model.Employee, error) {
 		return nil, err
 	}
 
-	repository.UpdateEmployee(e)
+	e = repository.UpdateEmployee(e)
 	return e, nil
 }

@@ -1,10 +1,16 @@
 package model
 
-import "errors"
+import (
+	"errors"
+)
 
 type Employee interface {
-	Salary() int
+	Name() string
+	Age() int
 	SetAge(age int) error
+	Salary() int
+	SetVersion(version int) error
+	Version() int
 }
 
 func NewEmployee(name string, age int) Employee {
@@ -15,12 +21,21 @@ func NewEmployee(name string, age int) Employee {
 }
 
 type employeeImpl struct {
-	name string
-	age  int
+	name    string
+	age     int
+	version int
 }
 
 func (e *employeeImpl) Salary() int {
 	return e.age * 10000
+}
+
+func (e *employeeImpl) Name() string {
+	return e.name
+}
+
+func (e *employeeImpl) Age() int {
+	return e.age
 }
 
 func (e *employeeImpl) SetAge(age int) error {
@@ -29,4 +44,16 @@ func (e *employeeImpl) SetAge(age int) error {
 	}
 	e.age = age
 	return nil
+}
+
+func (e *employeeImpl) SetVersion(v int) error {
+	if e.version >= v {
+		return errors.New("input version is less than current version")
+	}
+	e.version = v
+	return nil
+}
+
+func (e *employeeImpl) Version() int {
+	return e.version
 }

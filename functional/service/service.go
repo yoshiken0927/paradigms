@@ -5,7 +5,7 @@ import (
 	"github.com/yoshiken0927/paradigms/functional/repository"
 )
 
-func UpdateEmployee(name string) func(int) model.Employee {
+func PutEmployee(name string) func(int) model.Employee {
 	return func(age int) model.Employee {
 		return repository.UpdateEmployee(model.SetAge(repository.FindEmployee(name))(age))
 	}
