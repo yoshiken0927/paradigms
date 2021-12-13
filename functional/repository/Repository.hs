@@ -12,9 +12,12 @@ findEmployee name = Employee {
   version = 0
 }
 
+
 updateEmployee :: Employee -> Employee
 updateEmployee e = Employee {
   name = name(e),
   age = age(e),
   version = version(e) + 1
 }
+
+

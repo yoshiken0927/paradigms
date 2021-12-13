@@ -26,18 +26,6 @@ type employeeImpl struct {
 	version int
 }
 
-func (e *employeeImpl) Salary() int {
-	return e.age * 10000
-}
-
-func (e *employeeImpl) Name() string {
-	return e.name
-}
-
-func (e *employeeImpl) Age() int {
-	return e.age
-}
-
 func (e *employeeImpl) SetAge(age int) error {
 	if e.age >= age {
 		return errors.New("input age is less than current age")
@@ -52,6 +40,18 @@ func (e *employeeImpl) SetVersion(v int) error {
 	}
 	e.version = v
 	return nil
+}
+
+func (e *employeeImpl) Salary() int {
+	return e.age * 10000
+}
+
+func (e *employeeImpl) Name() string {
+	return e.name
+}
+
+func (e *employeeImpl) Age() int {
+	return e.age
 }
 
 func (e *employeeImpl) Version() int {

@@ -13,9 +13,9 @@ func main() {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println(parse(e))
+	fmt.Println(format(e))
 }
 
-func parse(e model.Employee) string {
+func format(e model.Employee) string {
 	return e.Name() + ":" + strconv.Itoa(e.Age()) + ":" + strconv.Itoa(e.Version())
 }

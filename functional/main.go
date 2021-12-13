@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	fmt.Println(parse(service.PutEmployee("yoshiken")(31)))
+	fmt.Println(format(service.PutEmployee("yoshiken")(31)))
 }
 
-func parse(e model.Employee) string {
+func format(e model.Employee) string {
 	return e.Name + ":" + strconv.Itoa(e.Age) + ":" + strconv.Itoa(e.Version)
 }
